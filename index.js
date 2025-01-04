@@ -14,10 +14,6 @@ async function main() {
   await mongoose.connect(
     "mongodb+srv://thezootree:gnKgpzDZ0fa8Cj6x@recipe-food-react.vuloe.mongodb.net/Recipe-Food-react?retryWrites=true&w=majority&appName=Recipe-Food-react"
   );
-
-  app.get("/", (req, res) => {
-    res.send("Recipe Food Server is running");
-  });
 }
 
 main().then(() => console.log("Mongodb Connected Succeffuly")).catch((err) => console.log(err));
@@ -29,6 +25,10 @@ const CategoryRoutes = require("./src/routes/CategoryRoute")
 
 app.use('/api', ItemRoutes);
 app.use('/api', CategoryRoutes);
+
+app.get("/", (req, res) => {
+  res.send("Recipe Food Server is running");
+});
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
