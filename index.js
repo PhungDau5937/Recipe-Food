@@ -23,7 +23,7 @@ main().then(() => console.log("Mongodb Connected Succeffuly")).catch((err) => co
 const ItemRoutes = require("./src/routes/ItemRoute");
 const CategoryRoutes = require("./src/routes/CategoryRoute")
 
-app.use('/api', ItemRoutes);
+app.use('api', ItemRoutes);
 app.use('/api', CategoryRoutes);
 
 app.get("/", (req, res) => {
