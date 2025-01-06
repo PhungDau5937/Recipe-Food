@@ -7,8 +7,8 @@ const port = process.env.PORT || 5000;
 // thezootree
 // gnKgpzDZ0fa8Cj6x
 
-app.use(express.json());
 app.use(cors());
+app.use(express.json());
 
 async function main() {
   await mongoose.connect(
