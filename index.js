@@ -7,7 +7,14 @@ const port = process.env.PORT || 5000;
 // thezootree
 // gnKgpzDZ0fa8Cj6x
 
-app.use(cors());
+// Apply CORS configuration
+const corsOptions = {
+  origin: '*', // Replace '*' with specific domains for more secure configurations
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 async function main() {
